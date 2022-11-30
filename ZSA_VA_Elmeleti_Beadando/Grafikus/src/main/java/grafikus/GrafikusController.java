@@ -137,7 +137,30 @@ public class GrafikusController {
         lb1.setText("Adatok beírva az adatbázisba");
     }
 
-  
+    @FXML
+    protected void menuReadClick() {
+        this.ElemekTörlése();
+        tv1.setVisible(true);
+        tv1.setManaged(true);
+        tv1.getColumns().removeAll(tv1.getColumns());
+        IDCol = new TableColumn("Id");
+        névCol = new TableColumn("Név");
+        tipusCol = new TableColumn("Típus");
+        dijazottCol = new TableColumn("Díjazott");
+        tv1.getColumns().addAll(IDCol, névCol, tipusCol, dijazottCol);
+        IDCol.setCellValueFactory(new PropertyValueFactory<>("Id"));
+        névCol.setCellValueFactory(new PropertyValueFactory<>("Név"));
+        tipusCol.setCellValueFactory(new PropertyValueFactory<>("Típus"));
+        dijazottCol.setCellValueFactory(new PropertyValueFactory<>("Díjazott"));
+        tv1.getItems().clear();
+        Session session = factory.openSession();
+        Transaction t = session.beginTransaction();
+        List<suti> lista = session.createQuery("FROM suti").list();
+        for (suti suti : lista)
+            tv1.getItems().add(suti);
+        System.out.println();
+        t.commit();
+    }
 
 
 
