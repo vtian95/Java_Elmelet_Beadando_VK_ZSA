@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Beadando_02/Beadando_02.iml" filepath="$PROJECT_DIR$/Beadando_02/Beadando_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Grafikus/Grafikus.iml" filepath="$PROJECT_DIR$/Grafikus/Grafikus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Legujabb_Beadando.iml" filepath="$PROJECT_DIR$/.idea/Legujabb_Beadando.iml" />
     </modules>
   </component>
 </project>
