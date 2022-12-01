@@ -161,6 +161,24 @@ public class GrafikusController {
         System.out.println();
         t.commit();
     }
+    @FXML
+    void Update() {
+
+        Session session = factory.openSession();
+        Transaction t = session.beginTransaction();
+
+        System.out.println("Update..");
+        int n = cb1.getVisibleRowCount();
+        suti suti = session.load(grafikus.suti.class, n);
+
+        suti.setNév(uNév.getText());
+        suti.setTípus(uTipus.getText());
+        suti.setDíjazott(Boolean.parseBoolean((uDijazott.getText())));
+
+        session.update(suti);
+        t.commit();
+
+    }
 
 
 
